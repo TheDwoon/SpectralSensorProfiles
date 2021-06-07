@@ -1,0 +1,8 @@
+load woman_face.mat
+
+fid = fopen("spectra_image.spimg", "w");
+img_dim = size(spi);
+fwrite(fid, [num2str(img_dim(1)) " " num2str(img_dim(2)) " " num2str(img_dim(3)) "\n"]);
+fwrite(fid, spi(:,:,:), "double")
+
+fclose(fid);
